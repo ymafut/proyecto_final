@@ -1,0 +1,5 @@
+D:\Desktop\Yamil\Programación\C#\CoderHouse\C#\DesafioEntregable_1\PrimerosPasos\PrimerosPasos\obj\Debug\net6.0\PrimerosPasos.csproj.AssemblyReference.cache
+D:\Desktop\Yamil\Programación\C#\CoderHouse\C#\DesafioEntregable_1\PrimerosPasos\PrimerosPasos\obj\Debug\net6.0\PrimerosPasos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\Yamil\Programación\C#\CoderHouse\C#\DesafioEntregable_1\PrimerosPasos\PrimerosPasos\obj\Debug\net6.0\PrimerosPasos.AssemblyInfoInputs.cache
+D:\Desktop\Yamil\Programación\C#\CoderHouse\C#\DesafioEntregable_1\PrimerosPasos\PrimerosPasos\obj\Debug\net6.0\PrimerosPasos.AssemblyInfo.cs
+D:\Desktop\Yamil\Programación\C#\CoderHouse\C#\DesafioEntregable_1\PrimerosPasos\PrimerosPasos\obj\Debug\net6.0\PrimerosPasos.csproj.CoreCompileInputs.cache
