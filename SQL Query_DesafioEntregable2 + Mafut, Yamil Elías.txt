@@ -1,0 +1,93 @@
+CLASE 10 | Miércoles 27/07/2022 
+--Ex 1 -> Realizar consulta que devuelva los datos del Usuario que NombreUsuario = tcasazza. 
+SELECT * 
+	FROM USuario
+	WHERE  NombreUsuario = 'tcasazza'
+
+--Ex 2 -> Realizar consulta que busque Usuario y Contraseña específica. 
+	--[Si los dos NO coinciden, que no devuelva nada]
+	--Probar dos ejemplos: 1. Insertando correctamente los dos campos.
+		2. Insertando un campo bien y un campo mal.
+SELECT * FROM Usuario
+	WHERE NombreUsuario = 'tcasazza'
+	AND Contraseña = 'SoyTobiasCasazza'
+
+SELECT * FROM Usuario
+	WHERE NombreUsuario = 'tcasazza'
+	AND Contraseña = 'NoSoyTobiasCasazza'
+
+--Ex 3 -> Realizar consulta que devuelva TODOS los Productos cargados por el IdUsuario = 1. 
+SELECT * FROM Producto
+	WHERE IdUsuario=1
+
+--Ex 4 -> Realizar un "INSERT" que agregue un Nuevo Usuario con todos los datos que contiene la tabla. 
+INSERT INTO Usuario (Nombre, Apellido, NombreUsuario, Contraseña, Mail)
+	VALUES('Daniel', 'Cachafaz', 'ecacha', 'SoyDanielCachafaz', 'danielcachafaz@gmail.com')  
+
+--Ex 5 -> Realizar un "INSERT" que agregue un Nuevo Producto. 
+INSERT INTO Producto (Descripciones, Costo, PrecioVenta, Stock, IdUsuario)
+	VALUES ('Short', 200, 400, 10, 1)
+
+--Mostrar las tablas: 
+SELECT * FROM Producto
+
+SELECT * FROM Usuario
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+CLASE 11 | Lunes 01/08/2022
+--Ex 1 -> Cambiar la Contraseña del Usuario "Tobias".
+UPDATE Usuario
+	SET Contraseña = 'NuevaPassTobias'
+	WHERE Id = 1;
+
+--Ex 2 -> Eliminar Usuario con Apellido "Perez".
+DELETE FROM Usuario
+	WHERE Id = 2;
+
+--Ex 3 -> Pasar a STOCK = 0 los "Buzos" en la tabla Producto. 
+UPDATE Producto
+	SET Stock = 0
+	WHERE Id = 6;
+
+--Ex 4 -> Eliminar Producto "Musculosa".
+DELETE FROM Producto
+	WHERE Id = 4;
+
+--Ex 5 -> Obtener Nombres de Usuarios que cargaron los Productos.
+SELECT u.Nombre, p.Descripciones FROM Usuario u INNER JOIN Producto p ON u.Id = p.IdUsuario;
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+DESAFÍO ENTREGABLE 2 
+
+--Ex 1 -> Obtener TODOS los Productos vendidos. 
+SELECT p.Descripciones FROM Producto p INNER JOIN ProductoVendido pv ON p.Id = pv.IdProducto;
+
+--Ex 2 -> Obtener VENTAS MAYORES a 10.000, de los Productos que terminen con "ina". 
+ALTER TABLE Producto
+	ADD DineroVentas money;
+UPDATE Producto	
+	SET DineroVentas = (PrecioVenta * Stock);
+SELECT Id, Descripciones, Stock, DineroVentas FROM Producto
+	WHERE Stock > 10000 AND Descripciones like '%ina';	
+SELECT Id, Descripciones, Stock, DineroVentas FROM Producto
+	WHERE DineroVentas > 10000 AND Descripciones like '%ina'; -- -> (Agrego esta consulta porque en un principio interpreté que VENTAS > $10.000,00)
+
+--Ex 3 -> Insertar el Producto "Aceite de Girasol Cocinera" con PrevioVenta = 500, Costo = 350 y Stock = 20.  
+  INSERT INTO Producto (Descripciones, Costo, PrecioVenta, Stock, IdUsuario)
+  VALUES ('Aceite de Girasol Cocinera', 350, 500, 20, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
